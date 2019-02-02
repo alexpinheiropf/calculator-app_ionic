@@ -1,0 +1,17 @@
+<ion-view view-title="Usuario - Lista" cache-view="false" ng-init="pesquisar()">
+  <ion-content>
+    <ul class="list" >
+      <li class="item" ng-repeat="dado in dados">
+        <a ng-click="alterar({{dado.id}})">
+          
+        <span>Nome: </span>{{dado.nome}} </br> </br>
+        <span>Login: </span>{{dado.login}} </br> </br>
+        <span>Senha: </span> {{dado.senha}}
+        <a>
+        <a class="item-icon-right" ng-click="deletar({{dado.id}})">
+          <i class="icon ion-trash-b"></i>
+        </a>
+      </li>
+    </ul>
+  </ion-content>
+</ion-view>

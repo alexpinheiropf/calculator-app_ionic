@@ -1,0 +1,36 @@
+<!-- ion-viewtag que define um conjunto de codes de view -->
+<ion-view title="Calculadora de Indice de Massa Corporal" class="bar-positive">
+  <ion-content overflow-scroll="true" padding="true" class="has-header">
+    <h1>Calculo IMC</h1>
+    <p>Preencha os campos abaixo para calcular o seu IMC</p>
+    <!-- form utilizado para enviar dados, ng-submit define o método JS que será executado na controller-->
+    <form class="list" ng-submit="executar(dados)">
+      <label class="item item-input" name="nome">
+
+        <span class="input-label">Nome</span>
+        <!-- modelo de INPUT para enviar valor no objeto dados -->
+        <input type="text" placeholder="Nome" ng-model="dados.nome">
+      </label>
+
+      <label class="item item-input" name="sobrenome">
+        <span class="input-label">Sobrenome</span>
+        <!-- modelo de INPUT para enviar valor no objeto dados -->
+        <input type="text" placeholder="Sobrenome" ng-model="dados.sobrenome">
+      </label>
+
+      <label class="item item-input" name="peso">
+        <span class="input-label">Peso</span>
+        <!-- modelo de INPUT para enviar valor no objeto dados -->
+        <input type="number" step="0.01" min="0" placeholder="Peso em Kilos" ng-model="dados.peso">
+      </label>
+
+      <label class="item item-input" name="altura">
+          <span class="input-label">Altura</span>
+            <input type="number" step="0.01" min="0" placeholder="Altura em metros ponto centimetros" ng-model="dados.altura">
+        </label>
+
+      <button class="button button-block button-positive" type="submit">Calcular IMC</button>
+
+    </form>
+  </ion-content>
+</ion-view>

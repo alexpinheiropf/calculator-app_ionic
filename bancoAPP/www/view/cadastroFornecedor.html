@@ -1,0 +1,21 @@
+<ion-view view-title="Menu Principal">
+  <ion-content>
+
+    <div class="list">
+
+      <form ng-submit="salvar(dados)">
+        <label class="item item-input">
+        <input type="text" placeholder="Nome" ng-model="dados.txtNome">
+      </label>
+        <label class="item item-input">
+        <input type="text" placeholder="E-mail" ng-model="dados.txtEmail">
+      </label>
+      <label class="item item-input">
+      <input type="text" placeholder="CNPJ" ng-model="dados.txtCnpj">
+    </label>
+        <button class="button button-full button-positive" type="submit">Salvar</button>
+      </form>
+    </div>
+
+  </ion-content>
+</ion-view>

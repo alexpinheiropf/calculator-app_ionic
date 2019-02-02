@@ -1,0 +1,33 @@
+<ion-view title="Amigo Pet" hide-nav-bar="true">
+
+  <ion-header-bar class="bar bar-deepblue bar-deepblue-borderbottom">
+    <button ui-sref="menu.start" class="button button-clear button-deepblue-white"><i class="white-color ion-arrow-left-c"></i></button>
+    <h2 class="title">Login</h2>
+
+  </ion-header-bar>
+
+  <ion-content class="has-header has-footer padding full-height text-center">
+
+    <h3 class="sans-pro-light">Acesse com suas credenciais</h3>
+
+    <form class="list" ng-submit="validar(dados)">
+      <label class="item item-input" name="login">
+        <!-- modelo de INPUT para enviar valor no objeto dados -->
+        <input type="text" placeholder="Email ou CPF" ng-model="dados.login">
+      </label>
+
+      <label class="item item-input" name="senha">
+        <!-- modelo de INPUT para enviar valor no objeto dados -->
+        <input type="password" placeholder="Senha" ng-model="dados.senha">
+      </label>
+
+      <button class="button button-block button-positive" type="submit">Enviar</button>
+
+    </form>
+  </ion-content>
+
+  <ion-footer-bar class="bar bar-deepblue bar-deepblue-bordertop pointer" ui-sref="menu.resetaSenha">
+    <h1 class="title sans-pro-light">Esqueceu sua senha ?</h1>
+  </ion-footer-bar>
+
+</ion-view>

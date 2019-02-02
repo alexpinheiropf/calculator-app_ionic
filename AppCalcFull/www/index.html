@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <title></title>
+
+  <link rel="manifest" href="manifest.json">
+
+  <!-- un-comment this code to enable service worker
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(() => console.log('service worker installed'))
+          .catch(err => console.log('Error', err));
+      }
+    </script>-->
+
+  <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+
+  <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+  <!-- ionic/angularjs js -->
+  <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+  <!-- cordova script (this will be a 404 during development) -->
+  <script src="cordova.js"></script>
+
+  <!-- your app's js -->
+  <script src="js/app.js"></script>
+  <script>
+  var valor1 = 0;
+  var operacao = "";
+  troca = false;
+
+  function resultado (){
+    valor2 = document.getElementById('display').innerHTML;
+    final= 0;
+    valor1 = parseInt(valor1);
+    valor2 = parseInt(valor2);
+
+    if (operacao=="mais"){
+      final =  valor1 + valor2;
+    }
+    if (operacao=="menos"){
+      final = valor1 - valor2;
+    }
+    if (operacao=="multiplicar"){
+      final = valor1 * valor2;
+    }
+    if (operacao=="dividir"){
+      final = valor1 / valor2;
+    }
+    document.getElementById('display').innerHTML = final;
+
+
+  }
+
+  function execute(oper){
+    operacao = oper;
+    valor1 = document.getElementById('display').innerHTML;
+    troca = true;
+  }
+
+  function zerar(){
+    document.getElementById('display').innerHTML = 0;
+  }
+  function concatena(valor){
+    var display = document.getElementById('display').innerHTML;
+    if (display==0 || troca == true){
+      display = valor;
+    }
+    else {
+      display = display  + valor;
+    }
+    document.getElementById('display').innerHTML = display;
+
+
+
+  }
+
+  </script>
+
+</head>
+
+<body ng-app="starter">
+
+  <ion-pane>
+    <ion-header-bar class="bar-stable">
+      <h1 class="title">Calculadora Windows</h1>
+    </ion-header-bar>
+
+    <ion-content>
+
+      <div class="card">
+        <div id="display">0</display>
+      </div>
+      <div class="card">
+        <div class="button-bar">
+          <a class="button" onclick="concatena('7')">7</a>
+          <a class="button" onclick="concatena('8')">8</a>
+          <a class="button" onclick="concatena('9')">9</a>
+          <a class="button" onclick="execute('mais')">+</a>
+        </div>
+        <div class="button-bar">
+          <a class="button" onclick="concatena('4')">4</a>
+          <a class="button" onclick="concatena('5')">5</a>
+          <a class="button" onclick="concatena('6')">6</a>
+          <a class="button" onclick="execute('menos')">-</a>
+
+        </div>
+        <div class="button-bar">
+          <a class="button" onclick="concatena('1')">1</a>
+          <a class="button" onclick="concatena('2')">2</a>
+          <a class="button" onclick="concatena('3')">3</a>
+          <a class="button" onclick="execute('dividir')">/</a>
+        </div>
+        <div class="button-bar">
+          <a class="button" onclick="concatena('0')">0</a>
+          <a class="button" onclick="zerar()">CE</a>
+          <a class="button" onclick="resultado()">=</a>
+          <a class="button" onclick="execute('multiplicar')">*</a>
+        </div>
+      </div
+
+
+
+
+
+    </ion-content>
+  </ion-pane>
+
+
+</body>
+
+</html>

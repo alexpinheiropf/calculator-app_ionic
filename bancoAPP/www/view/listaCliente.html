@@ -1,0 +1,15 @@
+<ion-view view-title="Menu Principal" ng-init="pesquisar()">
+  <ion-content>
+    <div class="list">
+      <div class="item" ng-repeat="dado in dados">
+        <a class="item item-icon-left" ng-click="alterar({{dado.id}})">
+          <i class="icon ion-person-stalker"></i> {{dado.nome}} - {{dado.sobrenome}}
+        </a>
+        <a class="item item-icon-right" ng-click="deletar({{dado.id}})">
+          <i class="icon ion-trash-b"></i>
+
+        </a>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

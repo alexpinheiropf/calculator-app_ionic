@@ -1,0 +1,21 @@
+<!-- ion-viewtag que define um conjunto de codes de view -->
+<ion-view title="Controle de Velocidade" class="bar-positive">
+  <ion-content overflow-scroll="true" padding="true" class="has-header">
+    <h1>Velocidade</h1>
+    <p>{{desenvolvedor}}</p>
+    <p>Preencha os campos abaixo para calcular a velocidade</p>
+    <!-- form utilizado para enviar dados, ng-submit define o método JS que será executado na controller-->
+    <form class="list" ng-submit="executar(dados)">
+      <label class="item item-input" name="distancia">
+<span class="input-label">Distancia</span>
+<!-- modelo de INPUT para enviar valor no objeto dados -->
+<input type="number" step="0.01" min="0" placeholder="Distancia" ng-model="dados.distancia">
+</label>
+      <label class="item item-input" name="tempo">
+<span class="input-label">Tempo</span>
+<input type="number" step="0.01" min="0" placeholder="Tempo em minutos" ng-model="dados.tempo">
+</label>
+      <button class="button button-block button-positive" type="submit">Calcular Velocidade</button>
+    </form>
+  </ion-content>
+</ion-view>

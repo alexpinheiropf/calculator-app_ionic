@@ -1,0 +1,55 @@
+<ion-view view-title="Conta" hide-back-button="true" cache-view="false" ng-init="pesquisar()">
+  <ion-content>
+    <div class=" text-center ui-gradient-deepblue padding">
+      <img class="avatar-account" ng-src="{{user.avatar}}">
+    </div>
+
+    <ul class="list" ng-repeat="dado in dados">
+
+        <label class="item item-input">
+          <span class="input-label">Nome</span>{{dado.nome}}
+        </label>
+
+        <label class="item item-input">
+          <span class="input-label">E-mail</span>{{dado.email}}
+        </label>
+
+        <label class="item item-input">
+          <span class="input-label">Celular</span>{{dado.celular}}
+        </label>
+
+        <a ng-click="alterar({{dado.id}})">
+
+
+
+
+        </a>
+        <a class="item-icon-right" ng-click="deletar({{dado.id}})">
+          <i class="icon ion-trash-b"></i>
+        </a>
+
+        <div class="item assertive item-text-wrap text-center" ng-if="accountForm.$invalid">
+          Preencha Todas as Informações
+        </div>
+
+
+    </ul>
+
+  </ion-content>
+
+  <ion-footer-bar class="bar bar-positive" ng-repeat="dado in dados">
+    <button ng-if="!readonly" class="button button-positive" ng-click="alterar({{dado.id}})">
+      EDITAR DADOS
+    </button>
+
+    <h2 class="title"> </h2>
+    <!--
+      #IMPLEMENTATION-DETAIL:
+      ng-disable disable the button in case of invalid form, leveraging form validation
+    -->
+    <button ng-repeat="dado in dados" class="button button-energized" ng-click="deletar({{dado.id}})">
+      EXCLUIR USUARIO </br>
+    </button>
+  </ion-footer-bar>
+
+</ion-view>

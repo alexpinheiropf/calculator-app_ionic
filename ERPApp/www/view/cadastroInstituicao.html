@@ -1,0 +1,17 @@
+<ion-view view-title="Instituição - Cadastro">
+  <ion-content>
+    <div class="list">
+      <form ng-submit="salvar(dado)">
+        <label class="item item-input">
+            <input type="hidden" ng-model="dado.id">
+            <input type="text" placeholder="Titulo" ng-model="dado.titulo">
+          </label>
+        <label class="item item-input">
+            <input type="text" placeholder="Texto" ng-model="dado.texto">
+          </label>
+        <button class="button button-full button-positive" type="submit">Salvar</button>
+      </form>
+    </div>
+
+  </ion-content>
+</ion-view>

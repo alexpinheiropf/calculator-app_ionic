@@ -1,0 +1,22 @@
+<ion-view view-title="Login">
+  <ion-content>
+    <h2>Aplicativo ER</h2>
+
+    <form class="list" ng-submit="validar(dados)">
+      <label class="item item-input" name="usuario">
+        <!-- modelo de INPUT para enviar valor no objeto dados -->
+        <input type="text" placeholder="Login" ng-model="dados.login">
+      </label>
+
+      <label class="item item-input" name="senha">
+        <!-- modelo de INPUT para enviar valor no objeto dados -->
+        <input type="password" placeholder="Senha" ng-model="dados.senha">
+      </label>
+
+      <button class="button button-block button-positive" type="submit">Enviar</button>
+
+
+    </form>
+
+  </ion-content>
+</ion-view>

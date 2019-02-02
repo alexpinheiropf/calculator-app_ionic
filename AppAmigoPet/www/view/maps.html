@@ -1,0 +1,19 @@
+<ion-view view-title="LOCALIZAR PETSHOPS" hide-back-button="true">
+
+  <ion-nav-buttons side="right">
+
+  </ion-nav-buttons>
+
+  <ion-header-bar class="bar-stable">
+    <h1 class="title">Map</h1>
+  </ion-header-bar>
+
+  <ion-content>
+  <map on-create="mapCreated(map)"></map>
+
+  </ion-content>
+
+  <ion-footer-bar class="bar-stable">
+    <a ng-click="centerOnMe()" class="button button-icon icon ion-navigate"></a>
+  </ion-footer-bar>
+</ion-view>

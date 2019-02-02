@@ -1,0 +1,24 @@
+<!-- ion-viewtag que define um conjunto de codes de view -->
+<ion-view title="Bradesco Saúde" class="bar-positive">
+  <ion-content overflow-scroll="true" padding="true" class="has-header">
+    <h2>Bem vindo ao Bradesco Saúde</h2>
+    <!-- form utilizado para enviar dados, ng-submit define o método JS que será executado na controller-->
+    <form class="list" ng-submit="executar(validacao)">
+      <label class="item item-input" name="usuario">
+
+        <span class="input-label"></span>
+        <!-- modelo de INPUT para enviar valor no objeto dados -->
+        <input type="text" placeholder="E-mail ou CPF" ng-model="validacao.usuario">
+      </label>
+
+      <label class="item item-input" name="senha">
+        <span class="input-label"></span>
+        <!-- modelo de INPUT para enviar valor no objeto dados -->
+        <input type="password" placeholder="Insira sua senha" ng-model="validacao.senha">
+      </label>
+
+      <button class="button button-block button-positive" type="submit">Enviar</button>
+
+    </form>
+  </ion-content>
+</ion-view>

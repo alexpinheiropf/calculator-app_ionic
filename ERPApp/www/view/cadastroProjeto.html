@@ -1,0 +1,26 @@
+<ion-view view-title="Projeto - Cadastro">
+  <ion-content>
+    <div class="list">
+      <form ng-submit="salvar(dado)">
+        <label class="item item-input">
+            <input type="hidden" ng-model="dado.id">
+            <input type="text" placeholder="Nome" ng-model="dado.nome">
+          </label>
+        <label class="item item-input">
+            <input type="text" placeholder="Descrição" ng-model="dado.descricao">
+          </label>
+          <label class="item item-input">
+          <!-- <input type="text" placeholder="Votos" ng-model="dado.votos"> -->
+
+        <ion-checkbox ng-model="dado.votos">Votar Sim</ion-checkbox>
+
+                <!-- <a class="button" ng-click="contVoto(1)"> Voto </a>
+                <div id="display"> 0 </div> -->
+
+            </label>
+        <button class="button button-full button-positive" type="submit">Salvar</button>
+      </form>
+    </div>
+
+  </ion-content>
+</ion-view>

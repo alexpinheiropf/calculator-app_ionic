@@ -1,0 +1,17 @@
+<ion-view view-title="Cliente - Cadastro">
+  <ion-content>
+    <div class="list">
+      <form ng-submit="salvar(dado)">
+        <label class="item item-input">
+            <input type="hidden" ng-model="dado.id">
+            <input type="text" placeholder="Nome" ng-model="dado.nome">
+          </label>
+        <label class="item item-input">
+            <input type="text" placeholder="Sobrenome" ng-model="dado.sobrenome">
+          </label>
+        <button class="button button-full button-positive" type="submit">Salvar</button>
+      </form>
+    </div>
+
+  </ion-content>
+</ion-view>

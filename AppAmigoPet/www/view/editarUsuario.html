@@ -1,0 +1,41 @@
+<ion-view hide-nav-bar="true" >
+
+  <ion-header-bar class="bar bar-deepblue bar-deepblue-borderbottom">
+    <button ui-sref="menu.conta" class="button button-clear button-deepblue-white">
+      <i class="white-color ion-arrow-left-c"></i></button>
+    <h2 class="title">Edição Usuário</h2>
+  </ion-header-bar>
+
+  <ion-content class="has-header has-footer padding full-height text-center">
+
+    <div class=" text-center ui-gradient-deepblue padding">
+        <img class="avatar-account" ng-src="{{user.avatar}}">
+    </div>
+
+    <div style="padding-top:50px;">
+      <div class="list">
+      <h4 class="sans-pro-light">Preencha Todas as Informações</h4>
+
+        <form ng-submit="salvar(dado)">
+          <label class="item item-input">
+              <input type="hidden" ng-model="dado.id">
+              <input type="text" placeholder="Nome Completo" ng-model="dado.nome">
+            </label>
+          <label class="item item-input">
+                <input type="text" placeholder="E-mail" ng-model="dado.email">
+              </label>
+          <label class="item item-input">
+              <input type="text" placeholder="Celular" ng-model="dado.celular">
+            </label>
+          <label class="item item-input">
+                <input type="password" placeholder="Senha" ng-model="dado.senha">
+              </label>
+          <button class="button button-block button-energized" type="submit">Salvar</button>
+        </form>
+      </div>
+
+    </div>
+
+  </ion-content>
+
+</ion-view>

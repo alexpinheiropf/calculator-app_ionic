@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <title></title>
+
+  <link rel="manifest" href="manifest.json">
+
+  <!-- un-comment this code to enable service worker
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(() => console.log('service worker installed'))
+          .catch(err => console.log('Error', err));
+      }
+    </script>-->
+
+  <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+
+  <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+  <!-- ionic/angularjs js -->
+  <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+  <!-- cordova script (this will be a 404 during development) -->
+  <script src="cordova.js"></script>
+
+  <!-- your app's js -->
+  <script src="js/app.js"></script>
+  <script>
+    function calcular() {
+      Kmveiculo = document.getElementById('Kmveiculo').value;
+      qtdLitro = document.getElementById('qtdLitro').value;
+      media = Kmveiculo / qtdLitro;
+      document.getElementById('display').innerHTML = media;
+
+    }
+  </script>
+
+</head>
+
+<body ng-app="starter">
+
+  <ion-pane>
+    <ion-header-bar class="bar-stable">
+      <h1 class="title">Média de Km por litro</h1>
+    </ion-header-bar>
+    <ion-content>
+      <!-- Recebe Informações -->
+      <div class="card">
+        <div class="list">
+          <label class="item item-input">
+              <input type="text" placeholder="Km percorrido com o Veiculo" id ="Kmveiculo">
+            </label>
+          <label class="item item-input">
+              <input type="text" placeholder="Qtde Litros de Gasolina consumidos " id ="qtdLitro">
+            </label>
+          <!-- Botão para calcular -->
+        </div>
+        <button class="button button-positive" onclick="calcular()">Calcular</button>
+      </div>
+      <!-- Display para visualização -->
+      <div class="card">
+
+        <div class="row">
+          <div class="col" id="display"></div>
+          <div class="col">Km por Litro</div>
+        </div>
+      </div>
+    </ion-content>
+  </ion-pane>
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+<ion-view view-title="Cliente - Lista">
+  <ion-content>
+    <ul class="list" >
+      <li class="item" ng-repeat="dado in dados" >
+        {{dado.nome}} {{dado.sobrenome}}
+        <a class="item-icon-right" ng-click="deletar({{dado.id}})">
+          <i class="icon ion-trash-b"></i>
+        </a>
+      </li>
+    </ul>
+  </ion-content>
+</ion-view>

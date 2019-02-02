@@ -1,0 +1,18 @@
+<ion-view view-title="Cadastro de Produto">
+  <ion-content>
+
+    <div class="list">
+
+      <form ng-submit="salvar(dados)">
+        <label class="item item-input">
+        <input type="text" placeholder="Descrição" ng-model="dados.txtDescricao">
+      </label>
+        <label class="item item-input">
+        <input type="text" placeholder="Estoque Minimo" ng-model="dados.txtEstoqueMinimo">
+      </label>
+        <button class="button button-full button-positive" type="submit">Salvar</button>
+      </form>
+    </div>
+
+  </ion-content>
+</ion-view>
